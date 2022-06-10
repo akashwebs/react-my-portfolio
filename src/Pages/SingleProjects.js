@@ -29,7 +29,7 @@ const SingleProjects = () => {
               <Carousel>
                     {
                         proejct?.image?.map(img => <div>
-                            <img style={{objectFit: "cover", height:'350px', width:'92%',  objectPosition: 'left top'}} src={img} alt='' className='h-[350]' />
+                            <img style={{objectFit: "cover", height:'350px', width:'350px',  objectPosition: 'left top'}} src={img} alt='' className='h-[350]' />
 
                         </div>)
                     }
