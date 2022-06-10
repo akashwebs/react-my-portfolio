@@ -24,20 +24,20 @@ const SingleProjects = () => {
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-8 text-start my-8'>
-            <div id='signle-port-p p-8'>
-              <div className='h-[400px] p-5'>
-              <Carousel>
+            <div id='signle-port'>
+              <div className='h-[600px] md:h-[400px] p-5'>
+              <Carousel className='text-center'>
                     {
                         proejct?.image?.map(img => <div>
-                            <img style={{objectFit: "cover", height:'350px', width:'350px',  objectPosition: 'left top'}} src={img} alt='' className='h-[350]' />
+                            <img style={{ height:'350px', width:'350px',  objectPosition: 'left top'}} src={img} alt='' className='h-[350]' />
 
                         </div>)
                     }
                 </Carousel>
               </div>
             </div>
-            <div id='signle-port' className='p-8'>
-                <p className='text-5xl'>{proejct.projectName}</p>
+            <div id='signle-port' className='p-8 mt-48 md:mt-0'>
+                <p className='text-5xl '>{proejct.projectName}</p>
                 <p className='text-2xl mt-5'>{proejct.details}</p>
                 <p className='mt-8 text-3xl'>Projects Features:</p>
                 <ul className='mb-5'>
