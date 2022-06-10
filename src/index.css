@@ -20,7 +20,14 @@
     text-transform: capitalize;
     transition: .2s linear;
 }
-
+#signle-port{
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+}
+#signle-port-p{
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+}
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -45,7 +52,11 @@ section {
     min-height: 100vh;
     padding: 1rem 2rem 2rem 2rem;
 }
-
+.thumbs .thumb {
+    height:80px !important;
+   
+    object-position: top top;
+}
 .btn {
     margin-top: 1rem;
     font-size: 1.7rem;

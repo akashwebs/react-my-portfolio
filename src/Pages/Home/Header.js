@@ -12,11 +12,11 @@ const Header = ({isture}) => {
 
 
                 <nav class="navbar">
-                    <a href="#home">home</a>
-                    <a href="#about">about</a>
-                    <a href="#services">services</a>
-                    <a href="#portfolio">portfolio</a>
-                    <a href="#contact">contact</a>
+                    <a href="/#home">home</a>
+                    <a href="/#about">about</a>
+                    <a href="/#services">services</a>
+                    <a href="/#portfolio">portfolio</a>
+                    <a href="/#contact">contact</a>
                 </nav>
             </header>
         </div>

@@ -9,18 +9,10 @@ import { faBars,faTimes } from "react-icons/fa";
 
 
 const Home = () => {
-    const [isture, setIstrue]=useState(false)
-
-    const handleMenu=()=>{
-        setIstrue(!isture)
-    }
-    
+   
     
     return (
         <>
-        <Header isture={isture}></Header>
-        <div onClick={handleMenu} id="menu-btn" class={`fas fa-bars ${isture ? 'fa-times':''}`}></div>
-        
         <Banner></Banner>
         <About></About>
         <Services></Services>
