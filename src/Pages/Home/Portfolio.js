@@ -10,7 +10,7 @@ const Portfolio = () => {
   const [proejcts, setProject] = useState({});
   const [looding, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/projects")
+    fetch("https://portfolio-server-express.vercel.app/projects")
       .then((res) => res.json())
       .then((data) => {
         setProject(data);
@@ -35,7 +35,7 @@ const Portfolio = () => {
             <div className="image-wrap">
               <img src={data?.image[0]} alt="" />
             </div>
-            <p className="text-3xl mb-3 text-white text-left px-4">
+            <p className="text-3xl mb-3 text-[#27ae60] text-left px-4">
               {data?.projectName}
             </p>
             <p className="text-xl pb-2 text-white text-left px-4">
