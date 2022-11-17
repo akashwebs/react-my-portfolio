@@ -9,13 +9,13 @@ const SingleProjects = () => {
     const [looding, setLoading] = useState(true)
     useEffect(() => {
 
-        fetch("https://fierce-fjord-58610.herokuapp.com/portfoliio")
-            .then(res => res.json())
-            .then(data => {
-                const projectData = data.find(p => p._id == idName)
-                setProject(projectData)
-                setLoading(false)
-            })
+        fetch("http://localhost:5000/projects")
+          .then((res) => res.json())
+          .then((data) => {
+            const projectData = data.find((p) => p._id == idName);
+            setProject(projectData);
+            setLoading(false);
+          });
     }, [idName])
 
     if (looding) {
