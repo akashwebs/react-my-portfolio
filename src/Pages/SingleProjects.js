@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { FaGithub, FaPaperPlane } from "react-icons/fa";
+import React from "react";
+import { useParams } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
+import { useQuery } from "@tanstack/react-query";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Loading from "./Loading";
 const SingleProjects = () => {
   const { idName } = useParams();
-  const [proejct, setProject] = useState({});
-  const [looding, setLoading] = useState(true);
-  useEffect(() => {
-    fetch("https://portfolio-server-express.vercel.app/projects")
-      .then((res) => res.json())
-      .then((data) => {
-        const projectData = data.find((p) => p._id == idName);
-        setProject(projectData);
-        setLoading(false);
-      });
-  }, [idName]);
 
-  if (looding) {
-    return "loading .........";
+  const {
+    isLoading,
+    error,
+    data: proejct,
+  } = useQuery({
+    queryKey: [idName],
+    queryFn: () =>
+      fetch(
+        `https://portfolio-server-express.vercel.app/projects/${idName}`
+      ).then((res) => res.json()),
+  });
+
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (
@@ -32,6 +34,7 @@ const SingleProjects = () => {
                   style={{
                     height: "350px",
                     width: "350px",
+                    objectFit: "cover",
                     objectPosition: "left top",
                   }}
                   src={img}
